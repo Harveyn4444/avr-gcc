@@ -118,9 +118,13 @@ int main(void) {
         dtostrf(temperature, 5, 2, buffer);
 
         // Send over UART
-        USART_sendString("Temperature: ");
+        // USART_sendString("Temperature: ");
+        // USART_sendString(buffer);
+        // USART_sendString(" C\r\n");
+
         USART_sendString(buffer);
-        USART_sendString(" C\r\n");
+        USART_sendString("\n");
+
 
         _delay_ms(1000);  // 1-second delay
     }
