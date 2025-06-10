@@ -2,23 +2,23 @@
 #include "config.h"  // bring in declared BAUD rate and CPU frequency - to change them edit config.h
 #include <util/delay.h>
 
-// #define F_CPU 16000000UL
-// #define BAUD 9600
 
 int main(void) {
 
     uart_init();
-    //This connect the basic functions of puts() and getChar() directly to the UART data
-    // So calling this puts or reads from the UART hardware too.
+    fflush(stdout);
     stdout = &uart_output;
     stdin  = &uart_input;
 
     char input;
+    unsigned int counter = 0;
+    fflush(stdout);
 
     while(1) {
-        puts("Hello world!");
-        input = getchar();
-        printf("You wrote %c\n", input);
+        printf("Hello World %d !\n", counter);
+        fflush(stdout);
+        _delay_ms(1000);
+        counter++;
     }
 
     return 0;
