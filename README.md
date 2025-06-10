@@ -8,4 +8,8 @@ sudo apt-get update
 sudo apt-get install gcc-avr binutils-avr avr-libc gdb-avr avrdud
 ```
 
-
+```
+make       # compile
+make flash # upload
+make clean # optional, clean build files
+```
